@@ -1,8 +1,9 @@
 import { Styles } from "Styles/Styles";
 import { CSSObject } from "@emotion/react/dist/emotion-react.cjs";
 
-class PagesLayout_PublicStyles extends Styles {
+class GameLayout_PublicStyles extends Styles {
 	public wrapper: CSSObject = {
+		...this.mixins.flexCenter,
 		overflow: "hidden",
 		position: "relative",
 		display: "flex",
@@ -10,4 +11,4 @@ class PagesLayout_PublicStyles extends Styles {
 	};
 }
 
-export default new PagesLayout_PublicStyles();
+export default new GameLayout_PublicStyles();

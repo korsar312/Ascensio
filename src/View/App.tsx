@@ -1,11 +1,11 @@
-import PagesLayout from "./Layouts/PagesLayout";
+import GameLayout from "./Layouts/GameLayout";
 import BackgroundLayout from "./Layouts/BackgroundLayout";
 
 const App = () => {
 	return (
 		<>
 			<BackgroundLayout />
-			<PagesLayout />
+			<GameLayout />
 		</>
 	);
 };
