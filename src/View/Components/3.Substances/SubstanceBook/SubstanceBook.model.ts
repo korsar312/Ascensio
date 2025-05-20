@@ -1,16 +1,27 @@
 import { IComponent } from "./index";
-import { useEffect, useRef } from "react";
+import HTMLFlipBook from "react-pageflip";
+import { useEffect, useRef, useState } from "react";
+
+type HTMLFlipBookProps = React.ComponentProps<typeof HTMLFlipBook>;
 
 function SubstanceBookModel(props: IComponent) {
 	const {} = props;
 
-	const bookRef = useRef<HTMLCanvasElement | null>(null);
+	const ref = useRef<HTMLDivElement>(null);
+	const [size, setSize] = useState([0, 0]);
 
 	useEffect(() => {
-		if (!bookRef.current) return;
+		if (!ref.current) return;
+		setSize([ref.current.offsetWidth, ref.current.offsetHeight]);
 	}, []);
 
-	return { bookRef };
+	const bookProps = {
+		width: size[0] / 2 - (size[0] / 100) * 5,
+		height: size[1] - (size[1] / 100) * 6,
+		useMouseEvents: !false,
+	} as HTMLFlipBookProps;
+
+	return { bookProps, ref, size };
 }
 
 export default SubstanceBookModel;

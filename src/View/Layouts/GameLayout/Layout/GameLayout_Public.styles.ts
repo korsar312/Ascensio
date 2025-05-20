@@ -9,6 +9,11 @@ class GameLayout_PublicStyles extends Styles {
 		display: "flex",
 		height: "100vh",
 	};
+
+	public book: CSSObject = {
+		width: 800,
+		height: 400,
+	};
 }
 
 export default new GameLayout_PublicStyles();

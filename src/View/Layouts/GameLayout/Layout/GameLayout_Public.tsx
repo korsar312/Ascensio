@@ -8,7 +8,9 @@ const GameLayout_Public: NFC<typeof GameLayoutModel> = (props) => {
 
 	return (
 		<div css={styles.wrapper}>
-			<SubstanceBook />
+			<div css={styles.book}>
+				<SubstanceBook />
+			</div>
 		</div>
 	);
 };
